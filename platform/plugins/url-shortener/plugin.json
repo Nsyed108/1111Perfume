@@ -1,0 +1,11 @@
+{
+    "id": "archielite/url-shortener",
+    "name": "URL Shortener",
+    "namespace": "ArchiElite\\UrlShortener\\",
+    "provider": "ArchiElite\\UrlShortener\\Providers\\UrlShortenerServiceProvider",
+    "author": "Archi Elite",
+    "url": "https://archielite.com",
+    "version": "2.0.4",
+    "description": "URL shortener to reduce a long link.",
+    "minimum_core_version": "7.0.0"
+}

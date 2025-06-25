@@ -1,0 +1,122 @@
+#scrollUp.active {
+    right: 70px !important;
+}
+#scrollUp {
+   right: 70px !important;
+}
+
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  background: white;
+  position: relative;
+  user-select: none;
+}
+.form-check {
+    display: none;
+}
+.marquee__track {
+  display: flex;
+  width: max-content;
+  animation: scroll-track 112s linear infinite;
+}
+.marquee .marquee__content {
+  list-style: none !important;
+}
+.marquee__content > li {
+  flex: 0 0 auto;
+  padding: 0.5rem 2rem;
+  white-space: nowrap;
+  font-size: 16px;
+  list-style: none !important;
+  color: black;
+}
+.marquee__content > ul {
+  list-style: none !important;
+}
+
+.marquee__content {
+  display: inline-flex;
+  list-style: none !important;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: nowrap; /* ✅ Add this */
+  animation: slide-items 112s linear infinite; /* 110s scroll + 2s pause */
+}
+
+@keyframes slide-items {
+  0% {
+    transform: translateX(100%);
+  }
+  98.2% {
+    transform: translateX(-15%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.marquee_english {
+  width: 100%;
+  overflow: hidden;
+  background: white;
+  position: relative;
+  user-select: none;
+}
+
+.marquee__track_english {
+  display: flex;
+  width: max-content;
+  animation: scroll-track_english 112s linear infinite;
+}
+
+.marquee_english .marquee__content_english {
+  list-style: none !important;
+}
+
+.marquee__content_english {
+  display: inline-flex;
+  list-style: none !important;
+  padding: 0;
+  margin: 0;
+  flex-wrap: nowrap;
+  animation: slide-items_english 112s linear infinite;
+}
+
+.marquee__content_english > li {
+  flex: 0 0 auto;
+  padding: 0.5rem 2rem;
+  white-space: nowrap;
+  font-size: 16px;
+  color: black;
+  list-style: none !important;
+}
+
+.marquee__content_english > ul {
+  list-style: none !important;
+}
+
+@keyframes slide-items_english {
+  0% {
+    transform: translateX(0%);
+  }
+  98.2% {
+    transform: translateX(-15%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes scroll-track_english {
+  0% {
+    transform: translateX(0%);
+  }
+  98.2% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
