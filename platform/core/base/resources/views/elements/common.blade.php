@@ -19,10 +19,20 @@
     @endif
 </script>
 
+{{-- 🛠 Override loader to prevent UI blocking --}}
+<script>
+    if (typeof Botble !== 'undefined') {
+        Botble.blockUI = function () {
+            console.log('[Botble loader disabled]');
+        };
+        Botble.unblockUI = function () {};
+    }
+</script>
+
 @push('footer')
     @if (Session::has('success_msg') || Session::has('error_msg') || (isset($errors) && $errors->any()) || isset($error_msg))
         <script type="text/javascript">
-            $(function() {
+            $(function () {
                 @if (Session::has('success_msg'))
                     Botble.showSuccess('{!! BaseHelper::cleanToastMessage(session('success_msg')) !!}');
                 @endif
@@ -37,7 +47,7 @@
                         Botble.showError('{!! BaseHelper::cleanToastMessage($error) !!}');
                     @endforeach
                 @endif
-            })
+            });
         </script>
     @endif
 @endpush

@@ -64,9 +64,20 @@
             {!! apply_filters('ecommerce_after_product_price_in_listing', null, $product) !!}
 
             @if (EcommerceHelper::isCartEnabled())
-                <div class="product-action-1 show" @if (!EcommerceHelper::isReviewEnabled()) style="bottom: 10px;" @endif>
-                    <a aria-label="{{ __('Add To Cart') }}" class="action-btn hover-up add-to-cart-button" data-bb-toggle="add-to-cart" data-product-price="{{ $product->front_sale_price }}" data-product-name="{{ $product->name }}" data-product-category="{{ $product->categories->first()->name }}" data-product-id="{{ $product->id }}" data-id="{{ $product->id }}" data-url="{{ route('public.cart.add-to-cart') }}" href="#"><i class="far fa-shopping-bag"></i></a>
-                </div>
+
+            <div class="show" @if (!EcommerceHelper::isReviewEnabled()) style="bottom: 10px;" @endif>
+                <button
+                type="button"
+                aria-label="{{ __('Add To Cart') }}"
+                class="add-to-cart-button"
+                data-id="{{ $product->id }}"
+                data-url="{{ route('public.cart.add-to-cart') }}"
+                style="background: #000; color: #fff; margin-top: 15px; width: 100%;
+                border: none; border-radius: 4px; padding: 8px 16px;
+                 font-weight: 500; cursor: pointer;">
+                {{ __('Add to Cart') }}
+            </button>
+        </div>
             @endif
         </div>
     </div>

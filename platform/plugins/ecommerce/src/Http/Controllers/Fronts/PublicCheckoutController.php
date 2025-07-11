@@ -248,6 +248,7 @@ class PublicCheckoutController extends BaseController
         }
 
         if ($request->input('address', [])) {
+            $sessionData['country'] = $request->input('address.country');
             if (! isset($sessionData['created_account']) && $request->input('create_account') == 1) {
                 $validator = Validator::make($request->input(), [
                     'password' => ['required', 'min:6'],
@@ -908,9 +909,6 @@ class PublicCheckoutController extends BaseController
             ->latest('id')
             ->firstOrFail();
 
-            /* TEST PURPOSE */
-            app(MoengagePixel::class)->purchase($order);
-            
         if (session('tracked_start_checkout')) {
             app(GoogleTagManager::class)->purchase($order);
             app(FacebookPixel::class)->purchase($order);

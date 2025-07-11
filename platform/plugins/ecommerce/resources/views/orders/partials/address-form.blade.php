@@ -1,3 +1,6 @@
+@php
+    use EcommerceHelper;
+@endphp
 <div class="customer-address-payment-form">
     <input type="hidden" name="update-tax-url" id="update-checkout-tax-url" value="{{ route('public.ajax.checkout.update-tax') }}">
     <div class="mb-3 form-group">
@@ -180,7 +183,7 @@
                 id="address_country"
                 name="address[country]"
                 type="hidden"
-                value="{{ EcommerceHelper::getFirstCountryId() }}"
+                value="{{ EcommerceHelper::getCountryByCookie() }}"
             >
         @endif
 

@@ -51,4 +51,8 @@ class OrderAddress extends BaseModel
     {
         return $this->belongsTo(Order::class)->withDefault();
     }
+    public function country_model(): BelongsTo
+    {
+    return $this->belongsTo(\Botble\Location\Models\Country::class, 'country', 'id');
+}
 }

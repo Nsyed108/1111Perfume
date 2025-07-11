@@ -66,6 +66,11 @@
             >{!! BaseHelper::clean($order->payment->status->toHtml()) !!}</span>
         </p>
 
+        <p>
+            <span class="d-inline-block">{{ __('Order number') }}:</span>
+            <span class="order-customer-info-meta">#{{ $order->code }}</span>
+        </p>
+
         @if (setting('payment_bank_transfer_display_bank_info_at_the_checkout_success_page', false) &&
                 ($bankInfo = OrderHelper::getOrderBankInfo($orders)))
             {!! $bankInfo !!}
